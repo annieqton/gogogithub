@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		F2412CE31E92B0E60092AD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CE21E92B0E60092AD6F /* AppDelegate.swift */; };
-		F2412CE51E92B0E60092AD6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CE41E92B0E60092AD6F /* ViewController.swift */; };
 		F2412CE81E92B0E60092AD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2412CE61E92B0E60092AD6F /* Main.storyboard */; };
 		F2412CEA1E92B0E60092AD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2412CE91E92B0E60092AD6F /* Assets.xcassets */; };
 		F2412CED1E92B0E60092AD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2412CEB1E92B0E60092AD6F /* LaunchScreen.storyboard */; };
+		F2412CF51E92C9120092AD6F /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CF41E92C9120092AD6F /* GitHub.swift */; };
+		F2412CF71E92CE700092AD6F /* GitHubAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CF61E92CE700092AD6F /* GitHubAuthController.swift */; };
+		F2412CF91E92EC270092AD6F /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CF81E92EC270092AD6F /* FoundationExtensions.swift */; };
+		F2412D001E92FD950092AD6F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CFF1E92FD950092AD6F /* Credentials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F2412CDF1E92B0E60092AD6F /* gogogithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gogogithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2412CE21E92B0E60092AD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F2412CE41E92B0E60092AD6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F2412CE71E92B0E60092AD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2412CE91E92B0E60092AD6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2412CEC1E92B0E60092AD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2412CEE1E92B0E60092AD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2412CF41E92C9120092AD6F /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		F2412CF61E92CE700092AD6F /* GitHubAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthController.swift; sourceTree = "<group>"; };
+		F2412CF81E92EC270092AD6F /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		F2412CFF1E92FD950092AD6F /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		F2412CE11E92B0E60092AD6F /* gogogithub */ = {
 			isa = PBXGroup;
 			children = (
-				F2412CE21E92B0E60092AD6F /* AppDelegate.swift */,
-				F2412CE41E92B0E60092AD6F /* ViewController.swift */,
-				F2412CE61E92B0E60092AD6F /* Main.storyboard */,
-				F2412CE91E92B0E60092AD6F /* Assets.xcassets */,
-				F2412CEB1E92B0E60092AD6F /* LaunchScreen.storyboard */,
-				F2412CEE1E92B0E60092AD6F /* Info.plist */,
+				F2412CFB1E92EC820092AD6F /* Model */,
+				F2412CFC1E92EDBF0092AD6F /* Controller */,
+				F2412CFD1E92EDEC0092AD6F /* View */,
+				F2412CFE1E92FD110092AD6F /* Supporting */,
 			);
 			path = gogogithub;
+			sourceTree = "<group>";
+		};
+		F2412CFB1E92EC820092AD6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2412CF41E92C9120092AD6F /* GitHub.swift */,
+				F2412CFF1E92FD950092AD6F /* Credentials.swift */,
+				F2412CF81E92EC270092AD6F /* FoundationExtensions.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F2412CFC1E92EDBF0092AD6F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2412CE21E92B0E60092AD6F /* AppDelegate.swift */,
+				F2412CF61E92CE700092AD6F /* GitHubAuthController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F2412CFD1E92EDEC0092AD6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2412CE61E92B0E60092AD6F /* Main.storyboard */,
+				F2412CEB1E92B0E60092AD6F /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F2412CFE1E92FD110092AD6F /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				F2412CE91E92B0E60092AD6F /* Assets.xcassets */,
+				F2412CEE1E92B0E60092AD6F /* Info.plist */,
+			);
+			name = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2412CE51E92B0E60092AD6F /* ViewController.swift in Sources */,
+				F2412CF91E92EC270092AD6F /* FoundationExtensions.swift in Sources */,
+				F2412CF51E92C9120092AD6F /* GitHub.swift in Sources */,
+				F2412CF71E92CE700092AD6F /* GitHubAuthController.swift in Sources */,
 				F2412CE31E92B0E60092AD6F /* AppDelegate.swift in Sources */,
+				F2412D001E92FD950092AD6F /* Credentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +348,7 @@
 				F2412CF31E92B0E60092AD6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
