@@ -13,6 +13,7 @@
 		F2412CED1E92B0E60092AD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2412CEB1E92B0E60092AD6F /* LaunchScreen.storyboard */; };
 		F2412CF51E92C9120092AD6F /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CF41E92C9120092AD6F /* GitHub.swift */; };
 		F2412CF71E92CE700092AD6F /* GitHubAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CF61E92CE700092AD6F /* GitHubAuthController.swift */; };
+		F2412CF91E92EC270092AD6F /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CF81E92EC270092AD6F /* FoundationExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F2412CEE1E92B0E60092AD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2412CF41E92C9120092AD6F /* GitHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		F2412CF61E92CE700092AD6F /* GitHubAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAuthController.swift; sourceTree = "<group>"; };
+		F2412CF81E92EC270092AD6F /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		F2412CE11E92B0E60092AD6F /* gogogithub */ = {
 			isa = PBXGroup;
 			children = (
-				F2412CF61E92CE700092AD6F /* GitHubAuthController.swift */,
-				F2412CE21E92B0E60092AD6F /* AppDelegate.swift */,
-				F2412CF41E92C9120092AD6F /* GitHub.swift */,
-				F2412CE61E92B0E60092AD6F /* Main.storyboard */,
+				F2412CFB1E92EC820092AD6F /* Model */,
+				F2412CFC1E92EDBF0092AD6F /* Controller */,
+				F2412CFD1E92EDEC0092AD6F /* View */,
 				F2412CE91E92B0E60092AD6F /* Assets.xcassets */,
-				F2412CEB1E92B0E60092AD6F /* LaunchScreen.storyboard */,
 				F2412CEE1E92B0E60092AD6F /* Info.plist */,
 			);
 			path = gogogithub;
+			sourceTree = "<group>";
+		};
+		F2412CFB1E92EC820092AD6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2412CE21E92B0E60092AD6F /* AppDelegate.swift */,
+				F2412CF41E92C9120092AD6F /* GitHub.swift */,
+				F2412CF81E92EC270092AD6F /* FoundationExtensions.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F2412CFC1E92EDBF0092AD6F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2412CF61E92CE700092AD6F /* GitHubAuthController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F2412CFD1E92EDEC0092AD6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2412CE61E92B0E60092AD6F /* Main.storyboard */,
+				F2412CEB1E92B0E60092AD6F /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2412CF91E92EC270092AD6F /* FoundationExtensions.swift in Sources */,
 				F2412CF51E92C9120092AD6F /* GitHub.swift in Sources */,
 				F2412CF71E92CE700092AD6F /* GitHubAuthController.swift in Sources */,
 				F2412CE31E92B0E60092AD6F /* AppDelegate.swift in Sources */,

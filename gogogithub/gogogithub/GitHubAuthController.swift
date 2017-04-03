@@ -28,7 +28,6 @@ class GitHubAuthController: UIViewController {
         GitHub.shared.oAuthRequetWith(parameters: parameters)
         
         
-        
     }
     
 }
