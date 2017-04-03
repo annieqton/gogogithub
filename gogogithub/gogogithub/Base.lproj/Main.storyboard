@@ -53,12 +53,10 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="L5O-4K-SO7" secondAttribute="trailing" constant="16" id="2Hi-iT-5gn"/>
                             <constraint firstItem="9mY-Cp-pKT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LaJ-51-B3A"/>
-                            <constraint firstItem="L5O-4K-SO7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Lqs-Eq-cUy"/>
                             <constraint firstItem="9mY-Cp-pKT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RRE-qj-EVU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9mY-Cp-pKT" secondAttribute="bottom" constant="20" id="VDC-Z7-fjy"/>
                             <constraint firstItem="L5O-4K-SO7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="kCw-Zb-YEW"/>
                             <constraint firstItem="L5O-4K-SO7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m34-JW-S8J"/>
-                            <constraint firstItem="L5O-4K-SO7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wge-kc-SEp"/>
                         </constraints>
                     </view>
                 </viewController>
