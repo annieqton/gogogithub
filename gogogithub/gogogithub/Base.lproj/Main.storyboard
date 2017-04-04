@@ -35,7 +35,7 @@
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HrY-M7-1rZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-4K-SO7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-4K-SO7">
                                 <rect key="frame" x="16" y="308" width="343" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.79711579619999995" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -60,7 +60,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="printTokenButton" destination="L5O-4K-SO7" id="m1i-uK-JkG"/>
+                        <outlet property="logInButton" destination="9mY-Cp-pKT" id="UP0-sk-AdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

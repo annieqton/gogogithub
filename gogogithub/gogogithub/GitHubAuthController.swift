@@ -10,20 +10,23 @@ import UIKit
 
 class GitHubAuthController: UIViewController {
 
+    
+    @IBOutlet weak var logInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if UserDefaults.standard.getAccessToken() != nil {
+            logInButton.isHidden = true
+        }
+        
+        
     }
 
     @IBAction func printTokenPressed(_ sender: Any) {
         print("\(String(describing: UserDefaults.standard.getAccessToken()))")
         
     }
-    
-//    @IBOutlet weak var printTokenButton: UIButton!{
-//        let printTokenButton = UIButton().userInteractionEnabled = false
-//    }
     
     
     @IBAction func loginButtonPressed(_ sender: Any) {
