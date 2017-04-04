@@ -79,6 +79,8 @@ class GitHub {
                         
                         let components = dataString.components(separatedBy: "&")
                         
+                        print(components)
+                        
                         for component in components {
                             if component.contains("access_token"){
                                 let access_token = component.components(separatedBy: "=").last

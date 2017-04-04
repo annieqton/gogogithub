@@ -30,11 +30,16 @@ class GitHubAuthController: UIViewController {
     
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        let parameters = ["scope" : "email,user"]
+        let parameters = ["scope" : "email,user,repo"]
 
         GitHub.shared.oAuthRequestWith(parameters: parameters)
         
         
+    }
+    
+    func dismissAuthController() {
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
     }
     
 }
