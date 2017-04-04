@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var authController : GitHubAuthController?
     var repoController : RepoViewController?
-
+    
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func presentAuthController() {
+    func presentAuthController() {  //setting repoViewController as parent and authController as child to be called above
         if let repoViewController = self.window?.rootViewController as? RepoViewController, let storyboard = repoViewController.storyboard {
             
             if let authViewController = storyboard.instantiateViewController(withIdentifier: GitHubAuthController.identifier) as? GitHubAuthController {
@@ -51,25 +51,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        let code = try? GitHub.shared.getCodeFrom(url: url)
+        //        let code = try? GitHub.shared.getCodeFrom(url: url)
         
-        print("Access Code: \(code)")
-        
-        if let access_token = UserDefaults.standard.getAccessToken() {
-            print("Access Token already existed")
-        } else {
+        GitHub.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
             
-            GitHub.shared.tokenRequestFor(url: url, saveOptions: .userDefaults) { (success) in
-                if success {
-                    print("<-------------Yay! Access token------------>")
-                } else {
-                    print("<-------------Bummer! No Success------------>")
-                }
+            if let authViewController = self.authController, let repoViewController = self.repoController {
+                
+                authViewController.dismissAuthController()
+                repoViewController.update()
             }
-            
         }
-        
-        
+    
         return true
     }
     

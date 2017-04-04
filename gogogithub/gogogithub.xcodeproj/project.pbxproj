@@ -17,6 +17,7 @@
 		F2412D001E92FD950092AD6F /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2412CFF1E92FD950092AD6F /* Credentials.swift */; };
 		F2F153FA1E940C1800F0F1C3 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F153F91E940C1800F0F1C3 /* RepoViewController.swift */; };
 		F2F153FC1E940D5400F0F1C3 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F153FB1E940D5400F0F1C3 /* UIExtensions.swift */; };
+		F2F153FE1E94195800F0F1C3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F153FD1E94195800F0F1C3 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F2412CFF1E92FD950092AD6F /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		F2F153F91E940C1800F0F1C3 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
 		F2F153FB1E940D5400F0F1C3 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		F2F153FD1E94195800F0F1C3 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F153FB1E940D5400F0F1C3 /* UIExtensions.swift */,
+				F2F153FD1E94195800F0F1C3 /* Repository.swift */,
 				F2412CF41E92C9120092AD6F /* GitHub.swift */,
 				F2412CFF1E92FD950092AD6F /* Credentials.swift */,
 				F2412CF81E92EC270092AD6F /* FoundationExtensions.swift */,
@@ -187,6 +190,7 @@
 				F2412CF91E92EC270092AD6F /* FoundationExtensions.swift in Sources */,
 				F2F153FC1E940D5400F0F1C3 /* UIExtensions.swift in Sources */,
 				F2412CF51E92C9120092AD6F /* GitHub.swift in Sources */,
+				F2F153FE1E94195800F0F1C3 /* Repository.swift in Sources */,
 				F2F153FA1E940C1800F0F1C3 /* RepoViewController.swift in Sources */,
 				F2412CF71E92CE700092AD6F /* GitHubAuthController.swift in Sources */,
 				F2412CE31E92B0E60092AD6F /* AppDelegate.swift in Sources */,
