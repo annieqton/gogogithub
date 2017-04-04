@@ -10,14 +10,21 @@ import UIKit
 
 class GitHubAuthController: UIViewController {
 
+    
+    @IBOutlet weak var logInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if UserDefaults.standard.getAccessToken() != nil {
+            logInButton.isEnabled = false
+        }
+        
+        
     }
 
     @IBAction func printTokenPressed(_ sender: Any) {
-        
+        print("\(String(describing: UserDefaults.standard.getAccessToken()))")
         
     }
     
@@ -25,7 +32,7 @@ class GitHubAuthController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: Any) {
         let parameters = ["scope" : "email,user"]
 
-        GitHub.shared.oAuthRequetWith(parameters: parameters)
+        GitHub.shared.oAuthRequestWith(parameters: parameters)
         
         
     }

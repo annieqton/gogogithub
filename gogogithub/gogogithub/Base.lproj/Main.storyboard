@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mY-Cp-pKT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mY-Cp-pKT">
                                 <rect key="frame" x="16" y="582" width="343" height="65"/>
                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.79711579623287676" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -59,6 +59,9 @@
                             <constraint firstItem="L5O-4K-SO7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m34-JW-S8J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logInButton" destination="9mY-Cp-pKT" id="UP0-sk-AdF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

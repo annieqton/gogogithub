@@ -28,7 +28,7 @@ class GitHub {
     
     static let shared = GitHub()
     
-    func oAuthRequetWith(parameters: [String : String]) {
+    func oAuthRequestWith(parameters: [String : String]) {
         var parametersString = ""
         
         for (key, value) in parameters {
@@ -76,10 +76,22 @@ class GitHub {
                     guard let data = data else { complete(success: false) ; return }
                     
                     if let dataString = String(data: data, encoding: .utf8){
-                        print(dataString)
-                    
-                        complete(success: true)
+                        
+                        let components = dataString.components(separatedBy: "&")
+                        
+                        for component in components {
+                            if component.contains("access_token"){
+                                let access_token = component.components(separatedBy: "=").last
+                                complete(success: UserDefaults.standard.save(accessToken: access_token!))
+                            }
+                        }
+                        
+                        print("<-----------\(dataString)")
+                        
+                    } else {
+                        complete(success: false)
                     }
+                        
                 }).resume()  //must resume for dataTask otherwise it would cause bug in production
                 
             }

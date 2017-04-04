@@ -17,8 +17,8 @@ extension UserDefaults {
         return token
     }
 
-    func save(accesToken: String) -> Bool {
-        UserDefaults.standard.set(accesToken, forKey: "access_token")
+    func save(accessToken: String) -> Bool {
+        UserDefaults.standard.set(accessToken, forKey: "access_token")
         return UserDefaults.standard.synchronize()
     }
 }
