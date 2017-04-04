@@ -86,7 +86,7 @@ class GitHub {
                             }
                         }
                         
-                        print("<-----------\(dataString)")
+                        print("<-----------\(dataString)------------->")
                         
                     } else {
                         complete(success: false)
