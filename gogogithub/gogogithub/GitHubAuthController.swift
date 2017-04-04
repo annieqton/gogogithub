@@ -17,7 +17,7 @@ class GitHubAuthController: UIViewController {
         super.viewDidLoad()
 
         if UserDefaults.standard.getAccessToken() != nil {
-            logInButton.isHidden = true
+            logInButton.isEnabled = false
         }
         
         
