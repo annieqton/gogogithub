@@ -17,15 +17,19 @@ class GitHubAuthController: UIViewController {
     }
 
     @IBAction func printTokenPressed(_ sender: Any) {
-        
+        print("\(String(describing: UserDefaults.standard.getAccessToken()))")
         
     }
+    
+//    @IBOutlet weak var printTokenButton: UIButton!{
+//        let printTokenButton = UIButton().userInteractionEnabled = false
+//    }
     
     
     @IBAction func loginButtonPressed(_ sender: Any) {
         let parameters = ["scope" : "email,user"]
 
-        GitHub.shared.oAuthRequetWith(parameters: parameters)
+        GitHub.shared.oAuthRequestWith(parameters: parameters)
         
         
     }
