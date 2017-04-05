@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepoViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate {
+class RepoViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var repoTableView: UITableView!
     
@@ -33,6 +33,7 @@ class RepoViewController: UIViewController, UISearchBarDelegate, UITableViewDele
 
         self.repoTableView.dataSource = self
         self.repoTableView.delegate = self
+        self.searchBar.delegate = self
         
         update()
         
@@ -49,11 +50,32 @@ class RepoViewController: UIViewController, UISearchBarDelegate, UITableViewDele
         
     }
     
+    
+//    prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == RepoDetailController.identifier {
+            segue.destination.transitioningDelegate = self
+        }
+    }
+    
 }
 
 
+//MARK:  extension for segue above
+extension RepoViewController : UIViewControllerTransitioningDelegate {
 
-extension RepoViewController : UITableViewDataSource  {  // add UISearchBarDelegate
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return CustomTransition(duration: 1.0)
+    }
+    
+}
+
+
+//MARK:
+extension RepoViewController : UITableViewDataSource, UITableViewDelegate  {  // add UISearchBarDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -66,6 +88,12 @@ extension RepoViewController : UITableViewDataSource  {  // add UISearchBarDeleg
         return cell
         
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: RepoDetailController.identifier, sender: nil)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allRepos.count  //TODO: need to refactor this to use for search bar. see note.  return displayRepos? count?? allRepos.count
