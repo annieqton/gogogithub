@@ -22,7 +22,7 @@ class Repository {
         guard let name = json["name"] as? String else { return nil }
         self.name = name
         
-        if let description = json["description"] as? String, let language = json["language"] as? String {
+        if let description = json["description"] as? String, let language = json["language"] as? String {  //need to break this into 2 if let because if one returns nil, then it will fail
             self.description = description
             self.language = language
         } else {
