@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MaY-Pt-4Vk">
-                                <rect key="frame" x="0.0" y="28" width="375" height="611"/>
+                                <rect key="frame" x="0.0" y="36" width="375" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepoCell" rowHeight="143" id="QIl-a4-DMj" customClass="RepoCell" customModule="gogogithub" customModuleProvider="target">
@@ -142,8 +142,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MaY-Pt-4Vk" firstAttribute="centerX" secondItem="FHs-6W-BA4" secondAttribute="centerX" id="Mpn-xd-pvl"/>
+                            <constraint firstItem="MaY-Pt-4Vk" firstAttribute="top" secondItem="dFR-OX-Fgh" secondAttribute="bottom" constant="16" id="NL4-y5-L9g"/>
                             <constraint firstItem="MaY-Pt-4Vk" firstAttribute="centerY" secondItem="FHs-6W-BA4" secondAttribute="centerY" id="cxs-zS-YgR"/>
-                            <constraint firstItem="MaY-Pt-4Vk" firstAttribute="top" secondItem="dFR-OX-Fgh" secondAttribute="bottom" constant="8" id="kkc-fr-orn"/>
                             <constraint firstItem="MaY-Pt-4Vk" firstAttribute="width" secondItem="FHs-6W-BA4" secondAttribute="width" id="l4d-4g-7ZT"/>
                         </constraints>
                     </view>
