@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepoViewController: UIViewController, UISearchBarDelegate {
+class RepoViewController: UIViewController {
 
     @IBOutlet weak var repoTableView: UITableView!
     
@@ -75,7 +75,7 @@ extension RepoViewController : UIViewControllerTransitioningDelegate {
 
 
 //MARK:
-extension RepoViewController : UITableViewDataSource, UITableViewDelegate  {  // add UISearchBarDelegate
+extension RepoViewController : UITableViewDataSource {  // add UISearchBarDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -98,9 +98,13 @@ extension RepoViewController : UITableViewDataSource, UITableViewDelegate  {  //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allRepos.count  //TODO: need to refactor this to use for search bar. see note.  return displayRepos? count?? allRepos.count
     }
-    
+}
+
     
 //    TODO:
+//    MARK: UISearchBarDelegate
+    
+//    extension RepoViewController: UISearchBarDelegate {
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //        
 //        if let searchedText = searchBar.text {
@@ -126,5 +130,6 @@ extension RepoViewController : UITableViewDataSource, UITableViewDelegate  {  //
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 //        self.searchBar.resignFirstResponder()
 //    }
-    
-}
+//}
+
+
