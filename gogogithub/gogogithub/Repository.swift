@@ -14,12 +14,20 @@ class Repository {
     let description: String?
     let language: String?
     
-    init?(json: [String: Any]) {
-        print("Complete this for lab")
-        
-        print(json)
-        
-        return nil
-    }
+    var repo: Repository?
     
+    init?(json: [String: Any]) {
+        //parse json here for lab
+        
+        guard let name = json["name"] as? String else { return nil }
+        self.name = name
+        
+        if let description = json["description"] as? String, let language = json["language"] as? String {
+            self.description = description
+            self.language = language
+        } else {
+            self.description = "No description available"
+            self.language = "No specified language"
+        }
+    }
 }

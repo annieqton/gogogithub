@@ -41,10 +41,7 @@ class GitHub {
         self.components.scheme = "https"
         self.components.host = "api.github.com"
         
-        if let token = UserDefaults.standard.getAccessToken(){
-            let queryItem = URLQueryItem(name: "access_token", value: token)
-            self.components.queryItems = [queryItem]
-        }
+
         
     }
     
@@ -136,6 +133,11 @@ class GitHub {
         
         self.components.path = "/user/repos"
         
+        if let token = UserDefaults.standard.getAccessToken(){
+            let queryItem = URLQueryItem(name: "access_token", value: token)
+            self.components.queryItems = [queryItem]
+        }
+        
         guard let url = self.components.url else { returnToMain(results: nil) ; return  }  //if url fails to build, return to main and get out of the scope of this function
         
         self.session.dataTask(with: url) { (data, response, error) in
@@ -146,9 +148,10 @@ class GitHub {
                 
                 do {
                     if let rootJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]] {
-                      
+         
                         for repositoryJSON in rootJson {
                             if let repo = Repository(json: repositoryJSON){
+                                print(repo.name)
                                 repositories.append(repo)
                             }
                         }

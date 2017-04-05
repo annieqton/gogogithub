@@ -8,12 +8,22 @@
 
 import UIKit
 
-class RepoViewController: UIViewController, UISearchBarDelegate {
+class RepoViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate {
 
+    @IBOutlet weak var repoTableView: UITableView!
+    
+    var allRepos = [Repository](){
+        didSet {
+            repoTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.repoTableView.dataSource = self
+        self.repoTableView.delegate = self
+        
         update()
         
     }
@@ -22,9 +32,31 @@ class RepoViewController: UIViewController, UISearchBarDelegate {
         print("<--------update repo controller here--------->")
         GitHub.shared.getRepos { (repositories) in
             //update TableView with the repositories you get back
-            
+            if let repositories = repositories {
+                self.allRepos = repositories
+            }
         }
         
     }
+    
+}
+
+
+
+extension RepoViewController : UITableViewDataSource  {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: RepoCell.identifier, for: indexPath) as! RepoCell
+        let eachRepo = self.allRepos[indexPath.row]
+            cell.eachRepo = eachRepo
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return allRepos.count
+    }
+    
     
 }
