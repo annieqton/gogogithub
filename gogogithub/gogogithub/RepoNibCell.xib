@@ -75,6 +75,14 @@
                     <constraint firstItem="IIH-Cl-odu" firstAttribute="top" secondItem="MUb-p9-Tpd" secondAttribute="bottom" constant="8" id="vrz-kV-jFV"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="repoCreated" destination="IIH-Cl-odu" id="nEn-74-BuK"/>
+                <outlet property="repoDescription" destination="mVE-fI-u84" id="pii-em-bap"/>
+                <outlet property="repoForked" destination="MUb-p9-Tpd" id="meu-xY-Ydg"/>
+                <outlet property="repoLanguage" destination="1OC-xX-bTo" id="bnC-d7-d8b"/>
+                <outlet property="repoName" destination="41F-UE-cOh" id="OUP-PK-Bqm"/>
+                <outlet property="repoStars" destination="85z-cT-B9b" id="QdI-0J-xWe"/>
+            </connections>
             <point key="canvasLocation" x="103" y="-33"/>
         </tableViewCell>
     </objects>
