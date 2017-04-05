@@ -146,9 +146,10 @@ class GitHub {
                 
                 do {
                     if let rootJson = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String: Any]] {
-                      
+         
                         for repositoryJSON in rootJson {
                             if let repo = Repository(json: repositoryJSON){
+                                print(repo.name)
                                 repositories.append(repo)
                             }
                         }
