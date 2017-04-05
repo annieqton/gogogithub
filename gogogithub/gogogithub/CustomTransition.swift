@@ -39,7 +39,4 @@ class CustomTransition: NSObject, UIViewControllerAnimatedTransitioning {
         
     }
 
-
-
-
 }

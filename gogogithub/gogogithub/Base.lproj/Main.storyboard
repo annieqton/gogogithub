@@ -166,7 +166,7 @@
                     <connections>
                         <outlet property="repoTableView" destination="MaY-Pt-4Vk" id="2v1-iq-cXQ"/>
                         <outlet property="searchBar" destination="faL-qH-hQW" id="C36-EY-pm2"/>
-                        <segue destination="9FA-jT-0g0" kind="presentation" identifier="RepoDetailViewController" id="79a-j0-PrE"/>
+                        <segue destination="9FA-jT-0g0" kind="presentation" identifier="RepoDetailController" id="79a-j0-PrE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdk-Un-V39" userLabel="First Responder" sceneMemberID="firstResponder"/>
