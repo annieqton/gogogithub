@@ -29,25 +29,9 @@
                                     <constraint firstAttribute="height" constant="200" id="ao8-Tz-PVP"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mY-Cp-pKT">
-                                <rect key="frame" x="16" y="582" width="343" height="65"/>
-                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.79711579623287676" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="8oI-BR-Fnq"/>
-                                </constraints>
-                                <state key="normal" title="LOGIN">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HrY-M7-1rZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-4K-SO7">
-                                <rect key="frame" x="16" y="308" width="343" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="0.79711579619999995" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5d0-db-cO7"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-4K-SO7">
+                                <rect key="frame" x="16" y="452" width="343" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="PRINT TOKEN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -55,17 +39,26 @@
                                     <action selector="printTokenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4fp-Qi-rVE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mY-Cp-pKT">
+                                <rect key="frame" x="144" y="569" width="86" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.65857769691780821" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="LOGIN">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HrY-M7-1rZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="L5O-4K-SO7" secondAttribute="trailing" constant="16" id="2Hi-iT-5gn"/>
-                            <constraint firstItem="9mY-Cp-pKT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LaJ-51-B3A"/>
-                            <constraint firstItem="9mY-Cp-pKT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RRE-qj-EVU"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9mY-Cp-pKT" secondAttribute="bottom" constant="20" id="VDC-Z7-fjy"/>
+                            <constraint firstItem="L5O-4K-SO7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2J8-yT-xUU"/>
                             <constraint firstItem="XfN-GG-RDK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dN3-gz-Bx8"/>
                             <constraint firstItem="XfN-GG-RDK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ew3-jX-kTa"/>
-                            <constraint firstItem="L5O-4K-SO7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="kCw-Zb-YEW"/>
-                            <constraint firstItem="L5O-4K-SO7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m34-JW-S8J"/>
+                            <constraint firstItem="L5O-4K-SO7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iTm-E3-YXc"/>
                         </constraints>
                     </view>
                     <connections>
