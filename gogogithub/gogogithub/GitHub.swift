@@ -41,10 +41,7 @@ class GitHub {
         self.components.scheme = "https"
         self.components.host = "api.github.com"
         
-        if let token = UserDefaults.standard.getAccessToken(){
-            let queryItem = URLQueryItem(name: "access_token", value: token)
-            self.components.queryItems = [queryItem]
-        }
+
         
     }
     
@@ -135,6 +132,11 @@ class GitHub {
         }
         
         self.components.path = "/user/repos"
+        
+        if let token = UserDefaults.standard.getAccessToken(){
+            let queryItem = URLQueryItem(name: "access_token", value: token)
+            self.components.queryItems = [queryItem]
+        }
         
         guard let url = self.components.url else { returnToMain(results: nil) ; return  }  //if url fails to build, return to main and get out of the scope of this function
         

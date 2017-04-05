@@ -23,26 +23,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="XfN-GG-RDK">
-                                <rect key="frame" x="87" y="233.5" width="200" height="200"/>
+                                <rect key="frame" x="87" y="234" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="EXG-Kl-x4G"/>
                                     <constraint firstAttribute="height" constant="200" id="ao8-Tz-PVP"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5O-4K-SO7">
-                                <rect key="frame" x="16" y="452" width="343" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="PRINT TOKEN">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="printTokenPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4fp-Qi-rVE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mY-Cp-pKT">
-                                <rect key="frame" x="144" y="569" width="86" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mY-Cp-pKT">
+                                <rect key="frame" x="152" y="567" width="71" height="29"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.65857769691780821" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="E2f-RR-b8z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -55,10 +47,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="L5O-4K-SO7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2J8-yT-xUU"/>
+                            <constraint firstAttribute="trailing" secondItem="9mY-Cp-pKT" secondAttribute="trailing" constant="152" id="UXh-wS-LV6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9mY-Cp-pKT" secondAttribute="bottom" constant="71" id="aak-EU-quN"/>
                             <constraint firstItem="XfN-GG-RDK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dN3-gz-Bx8"/>
                             <constraint firstItem="XfN-GG-RDK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ew3-jX-kTa"/>
-                            <constraint firstItem="L5O-4K-SO7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="iTm-E3-YXc"/>
+                            <constraint firstItem="9mY-Cp-pKT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ilo-4e-1d7"/>
+                            <constraint firstItem="9mY-Cp-pKT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="152" id="rXl-it-UsR"/>
                         </constraints>
                     </view>
                     <connections>
@@ -83,7 +77,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MaY-Pt-4Vk">
                                 <rect key="frame" x="0.0" y="36" width="375" height="595"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.31961686643835618" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RepoCell" rowHeight="143" id="QIl-a4-DMj" customClass="RepoCell" customModule="gogogithub" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="143"/>
@@ -147,6 +141,7 @@
                                                 <constraint firstItem="cw5-Cr-v4C" firstAttribute="leading" secondItem="sAx-vt-Hhs" secondAttribute="leadingMargin" id="xGt-jn-LI2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.31961686639999998" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="repoDescription" destination="W5d-KC-0NH" id="bug-d7-nF7"/>
                                             <outlet property="repoLanguage" destination="dK1-vN-Gmh" id="Zbv-cO-FAq"/>
