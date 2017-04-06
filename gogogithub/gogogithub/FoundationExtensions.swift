@@ -23,7 +23,7 @@ extension UserDefaults {
     }
 }
 
-
+//MARK: Date conversion from string
 extension Date {
     
     var shortStyle: String {
@@ -46,7 +46,39 @@ extension Date {
         formatter.dateStyle = style
         return formatter
     }
-    
+}
 
+
+//MARK: String validation
+extension String {
+   
+    func validate() -> Bool {
+        let pattern = "[^0-9a-zA-Z_-]"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+            let range = NSRange(location: 0, length: self.characters.count)
+            let matches = regex.numberOfMatches(in: self, options: .reportCompletion, range: range)
+            
+            if matches > 0 {  //invalid string if there's any matches in it. see pattern above
+                return false
+            }
+            
+            return true  //if regex can be created and matches is 0 or less, return true as string conforms to pattern
+        
+        } catch {
+           return false
+        }
+        
+    }
+    
     
 }
+
+
+
+
+
+
+
+

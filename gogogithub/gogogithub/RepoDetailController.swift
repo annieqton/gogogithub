@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class RepoDetailController: UIViewController {
 
@@ -35,5 +36,36 @@ class RepoDetailController: UIViewController {
         }
      
     }
+    
+    
+    @IBAction func moreDetailsPressed(_ sender: Any) {
+        guard let selectedRepo = selectedRepo else { return }
+        
+//        presentWebViewControllerWith(urlString: selectedRepo.repoUrlString)  //webview, no way to dimiss and go back
+        presentSafariViewControllerWith(urlString: selectedRepo.repoUrlString)  //safari view
+    }
+    
+    func presentSafariViewControllerWith(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        
+        let safariController = SFSafariViewController(url: url)
+        self.present(safariController, animated: true, completion: nil)
+        
+    }
+    
+    
+    func presentWebViewControllerWith(urlString: String) {
+        let webController = WebViewController()
+        webController.url = urlString
+        
+        self.present(webController, animated: true, completion: nil)
+    }
+    
+//    @IBAction func donePressed(_ sender: Any) {
+//        self.dismiss(animated: true, completion: nil)
+//        
+//    }
+    
+    
     
 }
