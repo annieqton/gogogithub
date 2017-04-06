@@ -21,7 +21,7 @@ class RepoViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    //    TODO:
+    
     var displayRepos: [Repository]?
 
     
@@ -31,6 +31,13 @@ class RepoViewController: UIViewController, UITableViewDelegate {
         self.repoTableView.dataSource = self
         self.repoTableView.delegate = self
         self.searchBar.delegate = self
+        
+        let repoNib = UINib(nibName: "RepoNibCell", bundle: nil)
+        
+        self.repoTableView.register(repoNib, forCellReuseIdentifier: RepoNibCell.identifier)
+        
+        self.repoTableView.estimatedRowHeight = 70
+        self.repoTableView.rowHeight = UITableViewAutomaticDimension
         
         update()
         
@@ -76,21 +83,18 @@ extension RepoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: RepoCell.identifier, for: indexPath) as! RepoCell
-        
-        //TODO: need to refactor this to use for search bar. see note.  cell.textLabel? .text = displayRepos? [indexPath.row].name?? allRepos[indexPath.row].name
-        
-        
+        let cell = repoTableView.dequeueReusableCell(withIdentifier: RepoNibCell.identifier, for: indexPath) as! RepoNibCell
+
         cell.repoName?.text = displayRepos?[indexPath.row].name ?? allRepos[indexPath.row].name
-        cell.repoDescription?.text = displayRepos?[indexPath.row].description ?? allRepos[indexPath.row].description
-        cell.repoLanguage?.text = displayRepos?[indexPath.row].description ?? allRepos[indexPath.row].language
+//        cell.repoDescription?.text = displayRepos?[indexPath.row].description ?? allRepos[indexPath.row].description
+//        cell.repoLanguage?.text = displayRepos?[indexPath.row].description ?? allRepos[indexPath.row].language
         
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayRepos?.count ?? allRepos.count  //TODO: need to refactor this to use for search bar. see note.  return displayRepos? count?? allRepos.count
+        return displayRepos?.count ?? allRepos.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -101,9 +105,8 @@ extension RepoViewController: UITableViewDataSource {
 }
 
 
-//    TODO:
-//    MARK: UISearchBarDelegate
 
+//    MARK: UISearchBarDelegate
 extension RepoViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchedText: String) {
         
@@ -116,8 +119,6 @@ extension RepoViewController: UISearchBarDelegate {
         }
         self.repoTableView.reloadData()
     }
-    
-    
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
