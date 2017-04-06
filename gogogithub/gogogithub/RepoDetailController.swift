@@ -25,12 +25,13 @@ class RepoDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let selectedRepo = selectedRepo {
-            self.nameLabel.text = "Name: \(selectedRepo.name)"
-            self.descriptionLabel.text = "Description: \(selectedRepo.description)"
-            self.languageLabel.text = "Language: \(selectedRepo.language)"
+            self.nameLabel.text = selectedRepo.name
+            self.descriptionLabel.text = selectedRepo.description
+            self.languageLabel.text = selectedRepo.language
             self.starsLabel.text = "Stars: \(String(describing: selectedRepo.stars))"
             self.isForkedLabel.text = "Fork Status: \(String(describing: selectedRepo.forked))"
-            self.dateCreatedLabel.text = "Date Created: \(selectedRepo.created)"
+            self.dateCreatedLabel.text = "Date Created: \(String(describing: selectedRepo.created))"
+//            self.dateCreatedLabel.text = selectedRepo.created.longStyle ?? "Unknown Date"
         }
      
     }
