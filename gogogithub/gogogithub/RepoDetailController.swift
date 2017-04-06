@@ -8,62 +8,31 @@
 
 import UIKit
 
-class RepoDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RepoDetailController: UIViewController {
 
+    var selectedRepo: Repository!
     
-    @IBOutlet weak var repoFeedTableView: UITableView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet weak var isForkedLabel: UILabel!
     
-    var eachRepo : Repository!
-
-    var allRepos = [Repository](){
-        didSet{
-            repoFeedTableView.reloadData()
-        }
-    }
-        
+    @IBOutlet weak var dateCreatedLabel: UILabel!
+  
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.repoFeedTableView.dataSource = self
-        self.repoFeedTableView.delegate = self
-        
-        let repoNib = UINib(nibName: "RepoNibCell", bundle: nil)
-        self.repoFeedTableView.register(repoNib, forCellReuseIdentifier: RepoNibCell.identifier)
-        
-        self.repoFeedTableView.estimatedRowHeight = 50
-        self.repoFeedTableView.rowHeight = UITableViewAutomaticDimension
-        
-        update()
-        
-    }
-    
-    func update() {
-        GitHub.shared.getRepos { (allRepos) in
-            if allRepos != nil{
-                OperationQueue.main.addOperation {
-                self.allRepos = allRepos!
-                }
-            }
+        if let selectedRepo = selectedRepo {
+            self.nameLabel.text = selectedRepo.name
+            self.descriptionLabel.text = selectedRepo.description
+            self.languageLabel.text = selectedRepo.language
+            self.starsLabel.text = "\(String(describing: selectedRepo.stars))"
+            self.isForkedLabel.text = "\(String(describing: selectedRepo.forked))"
+            self.dateCreatedLabel.text = selectedRepo.created
         }
+     
     }
     
-    
-
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allRepos.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = repoFeedTableView.dequeueReusableCell(withIdentifier: RepoNibCell.identifier, for: indexPath) as! RepoNibCell
-
-        let eachRepo = self.allRepos[indexPath.row]
-        cell.eachRepo = eachRepo
-        
-        return cell
-    }
-    
-
 }

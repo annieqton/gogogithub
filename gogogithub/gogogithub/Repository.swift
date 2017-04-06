@@ -28,7 +28,7 @@ class Repository {
         if let description = json["description"] as? String,
             let language = json["language"] as? String,
             let stars = json["targazers_count"] as? Int?,
-            let forked = json["forks_count"] as? Bool,
+            let forked = json["fork"] as? Bool,
             let created = json["created_at"] as? String?
         {
             self.description = description

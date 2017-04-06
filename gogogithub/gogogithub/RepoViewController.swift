@@ -36,7 +36,7 @@ class RepoViewController: UIViewController, UITableViewDelegate {
         
         self.repoTableView.register(repoNib, forCellReuseIdentifier: RepoNibCell.identifier)
         
-        self.repoTableView.estimatedRowHeight = 70
+        self.repoTableView.estimatedRowHeight = 150
         self.repoTableView.rowHeight = UITableViewAutomaticDimension
         
         update()
@@ -65,7 +65,7 @@ class RepoViewController: UIViewController, UITableViewDelegate {
             let selectedRepo = allRepos[selectedIndex]
             
             if let destinationController = segue.destination as? RepoDetailController {
-                destinationController.eachRepo = selectedRepo
+                destinationController.selectedRepo = selectedRepo
             }
             
             segue.destination.transitioningDelegate = self
@@ -92,8 +92,9 @@ extension RepoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = repoTableView.dequeueReusableCell(withIdentifier: RepoNibCell.identifier, for: indexPath) as! RepoNibCell
-
-        cell.repoName?.text = displayRepos?[indexPath.row].name ?? allRepos[indexPath.row].name
+        
+        cell.eachRepo = self.allRepos[indexPath.row]
+//        cell.repoName?.text = displayRepos?[indexPath.row].name ?? allRepos[indexPath.row].name
 //        cell.repoDescription?.text = displayRepos?[indexPath.row].description ?? allRepos[indexPath.row].description
 //        cell.repoLanguage?.text = displayRepos?[indexPath.row].description ?? allRepos[indexPath.row].language
         
