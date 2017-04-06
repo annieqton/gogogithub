@@ -22,3 +22,31 @@ extension UserDefaults {
         return UserDefaults.standard.synchronize()
     }
 }
+
+
+extension Date {
+    
+    var shortStyle: String {
+//        let shortFormatter.string(from: self)
+        return formatterWith(style: .short).string(from: self)
+    }
+
+    
+    var mediumStyle: String {
+        return formatterWith(style: .medium).string(from: self)
+    }
+    
+    var longStyle: String {
+        return formatterWith(style: .long).string(from: self)
+    }
+    
+    
+    private func formatterWith(style: DateFormatter.Style) -> DateFormatter{
+        let formatter = DateFormatter()
+        formatter.dateStyle = style
+        return formatter
+    }
+    
+
+    
+}

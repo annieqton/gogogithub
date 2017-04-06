@@ -14,7 +14,7 @@ class Repository {
     let description: String?
     let language: String?
     let stars: Int?
-    let forked: Bool?
+    let forked: Bool
     let created: String?
     
     var repo: Repository?
@@ -35,7 +35,8 @@ class Repository {
             self.language = language
             self.stars = stars
             self.forked = forked
-            self.created = created
+            self.created = created?.components(separatedBy: "T").first!
+            
             
         } else {
             self.description = "No description available"
