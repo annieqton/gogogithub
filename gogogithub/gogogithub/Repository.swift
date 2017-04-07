@@ -14,8 +14,10 @@ class Repository {
     let description: String?
     let language: String?
     let stars: Int?
-    let forked: Bool?
-    let created: String?
+    let forked: Bool
+    let created: String?  //Date
+    
+    let repoUrlString: String
     
     var repo: Repository?
     
@@ -29,13 +31,16 @@ class Repository {
             let language = json["language"] as? String,
             let stars = json["targazers_count"] as? Int?,
             let forked = json["fork"] as? Bool,
-            let created = json["created_at"] as? String?
+            let created = json["created_at"] as? String?  //Date.from ISO8601(dateString) ?? Date()
         {
             self.description = description
             self.language = language
             self.stars = stars
             self.forked = forked
-            self.created = created
+            self.created = created?.components(separatedBy: "T").first!
+            
+            self.repoUrlString = json["html_url"] as? String ?? "https://www.github.com"
+            
             
         } else {
             self.description = "No description available"
@@ -43,6 +48,7 @@ class Repository {
             self.stars = 0
             self.forked = false
             self.created = "No date available"
+            self.repoUrlString = ""
         }
     }
 }

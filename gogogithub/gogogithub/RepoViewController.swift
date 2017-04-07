@@ -119,6 +119,13 @@ extension RepoViewController: UITableViewDataSource {
 extension RepoViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchedText: String) {
         
+        if !searchedText.validate(){
+//            print(searchedText)
+//            searchBar.text = "Invalid!"
+            let lastIndex = searchedText.index(before: searchedText.endIndex)
+            searchBar.text = searchedText.substring(to: lastIndex)
+        }
+        
         if let searchedText = searchBar.text {
             self.displayRepos = self.allRepos.filter({$0.name.lowercased().contains(searchedText.lowercased())})
         }
